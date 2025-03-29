@@ -5,17 +5,17 @@ import { Input } from "@/components/ui/input";
 import { Alert } from "@/components/ui/alert";
 
 const Signin = () => {
-  const [email, setEmail] = useState("");
+  const [userId, setUserId] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
   const handleLogin = () => {
-    if (!email || !password) {
-      setError("メールアドレスとパスワードを入力してください。");
+    if (!userId || !password) {
+      setError("ユーザーIDとパスワードを入力してください。");
       return;
     }
     setError("");
-    console.log("ログイン成功:", { email, password });
+    console.log("ログイン成功:", { userId, password });
   };
 
   return (
@@ -29,8 +29,8 @@ const Signin = () => {
           <div className="space-y-4">
             <Input
               placeholder="メールアドレス"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              value={userId}
+              onChange={(e) => setUserId(e.target.value)}
             />
             <Input
               type="password"
@@ -38,7 +38,7 @@ const Signin = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            <Button className="w-full" onClick={handleLogin} disabled={email === '' || password === ''}>
+            <Button className="w-full" onClick={handleLogin} disabled={userId === '' || password === ''}>
               ログイン
             </Button>
           </div>
