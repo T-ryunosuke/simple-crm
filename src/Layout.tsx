@@ -1,8 +1,8 @@
 import Sidebar from "@/components/Sidebar";
 import Header from "@/components/Header";
-import DashboardMain from "@/components/DashboardMain";
+import DashboardMain from "@/pages/DashboardMain";
 
-const Dashboard = () => {
+const Layout = () => {
   return (
     <div>
       <Header />
@@ -12,4 +12,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Layout;
