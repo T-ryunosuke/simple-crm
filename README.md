@@ -1,54 +1,147 @@
-# React + TypeScript + Vite
+# Simple CRM - 顧客管理システム
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+シンプルでユーザーフレンドリーな顧客管理システムのフロントエンド実装です。
+このアプリケーションは、ログイン機能と顧客情報の管理機能を提供します。
 
-Currently, two official plugins are available:
+[![Image from Gyazo](https://i.gyazo.com/8d29ede9ffadbb4c47eccf0ea8ce2721.png)](https://gyazo.com/8d29ede9ffadbb4c47eccf0ea8ce2721)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 目次
 
-## Expanding the ESLint configuration
+- [機能概要](#機能概要)
+- [セットアップ手順](#セットアップ手順)
+- [使用した技術・ライブラリ](#使用した技術ライブラリ)
+- [実装した機能の説明](#実装した機能の説明)
+- [動作確認方法](#動作確認方法)
+- [フォルダ構成](#フォルダ構成)
+- [今後の改善点](#今後の改善点)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 機能概要
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+このアプリケーションは以下の主要機能を提供します：
+
+- シンプルなログイン画面
+- 顧客情報の一覧表示
+- 顧客情報の検索機能
+- 顧客データの並び替え機能
+- レスポンシブデザイン対応
+
+## セットアップ手順
+
+以下の手順でアプリケーションをローカル環境で実行できます。
+
+### 前提条件
+
+- Node.js (v14.0.0 以上)
+- npm (v6.0.0 以上)
+
+### インストール
+
+1. リポジトリをクローンします
+
+```bash
+git clone https://github.com/yourusername/simple-crm.git
+cd simple-crm
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. 依存パッケージをインストールします
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+npm install
 ```
+
+3. アプリケーションを起動します
+
+```bash
+npm run dev
+```
+
+4. ターミナルに表示されるlocalhostのURLにアクセスしてください。
+
+
+## 使用した技術・ライブラリ
+
+- **言語**: Typescript
+- **フレームワーク**: React (Vite)
+- **UI ライブラリ**: ShadCN-UI
+- **スタイリング**: Tailwindcss
+- **開発ツール**: ESLint, Prettier
+
+## 実装した機能の説明
+
+### 1. ログイン機能
+
+- ユーザーID・パスワード入力フォーム
+- 入力バリデーション（空欄時ボタン非活性化）
+- エラーメッセージ表示（機能としてはあるものの非活性化するため無用の長物）
+
+### 2. 顧客一覧画面
+
+- 顧客情報のカード形式での表示
+  - 顧客名
+  - 顧客名の振り仮名
+  - メールアドレス
+  - 電話番号
+  - 登録日
+
+- **検索機能**
+  - 顧客名による絞り込み検索
+  - リアルタイム検索結果表示
+- **並び替え機能**
+  - 名前順
+  - 登録日順
+- **レスポンシブ対応**
+  - スマートフォン向けの最適化表示
+
+### 3. デザイン
+
+- ShadCN-UIを使用した一貫性のあるデザイン
+- アクセシビリティに配慮したUI設計
+
+## 動作確認方法
+
+### 顧客一覧画面
+
+1. アプリケーションを起動すると、顧客一覧画面が表示されます。
+2. ヘッダーの下にある検索欄に顧客名を入力することで検索ができます。
+3. 顧客名順や登録名順のボタンを押すことで、データを並び替えることができます。
+4. ブラウザの幅を狭めると、レスポンシブ対応された表示に自動的に切り替わります。
+
+### ログイン画面
+
+1. 顧客一覧画面でログアウトボタンを押すとログイン画面に移ります。
+2. ユーザーIDとパスワードに文字を入力してログインボタンを押すことで、ログイン風の操作ができます。
+※入力欄が空の状態ではログインボタンを押すことはできません。
+
+## フォルダ構成
+
+```
+src/
+├── components/
+│   ├── ui/                 # 汎用UIコンポーネント
+│   │   ├── alert.tsx
+│   │   ├── button.tsx
+│   │   ├── card.tsx
+│   │   ├── input.tsx
+│   │   └── navigation-menu.tsx
+│   ├── Header.tsx          # ヘッダー用コンポーネント
+│   └── Sidebar.tsx         # サイドバー用コンポーネント
+├── hooks/                  # カスタムHooks用
+├── lib/                    # ユーティリティ関数用
+│   └── utils.ts            # ユーティリティ関数用
+├── pages/                  # ページコンポーネント
+│   ├── DashboardMain.tsx   # ダッシュボード用のコンポーネント
+│   └── Signin.tsx          # ヘッダー用コンポーネント
+├── App.tsx                 # アプリケーションのルート
+├── index.css               # グローバルなスタイル
+├── Layout.tsx              # 共通レイアウト
+├── main.tsx                # エントリーポイント
+└── vite-env.d.ts           # Viteの環境設定用の型定義
+```
+
+## 今後の改善点
+
+- 顧客詳細画面の実装
+- フィルタリング機能の拡張
+- 顧客データの登録・編集・削除機能
+- バックエンドとの連携（API実装）
+- テストの追加
