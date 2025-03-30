@@ -117,25 +117,35 @@ npm run dev
 ```
 src/
 ├── components/
-│   ├── ui/                 # 汎用UIコンポーネント
+│   ├── dashboard/            # ダッシュボード用のコンポーネント
+│   │    ├── CustomerList.tsx # 顧客リスト表示用のコンポーネント
+│   │    ├── SearchBox.tsx    # 検索ボックス用のコンポーネント
+│   │    └── SortButtons.tsx  # 並び替えボタン用のコンポーネント
+│   ├── ui/                   # 汎用UIコンポーネント
 │   │   ├── alert.tsx
 │   │   ├── button.tsx
 │   │   ├── card.tsx
 │   │   ├── input.tsx
 │   │   └── navigation-menu.tsx
-│   ├── Header.tsx          # ヘッダー用コンポーネント
-│   └── Sidebar.tsx         # サイドバー用コンポーネント
-├── hooks/                  # カスタムHooks用
-├── lib/                    # ユーティリティ関数用
-│   └── utils.ts            # ユーティリティ関数用
-├── pages/                  # ページコンポーネント
-│   ├── DashboardMain.tsx   # ダッシュボード用のコンポーネント
-│   └── Signin.tsx          # ヘッダー用コンポーネント
-├── App.tsx                 # アプリケーションのルート
-├── index.css               # グローバルなスタイル
-├── Layout.tsx              # 共通レイアウト
-├── main.tsx                # エントリーポイント
-└── vite-env.d.ts           # Viteの環境設定用の型定義
+│   ├── Header.tsx            # ヘッダー用コンポーネント
+│   └── Sidebar.tsx           # サイドバー用コンポーネント
+├── data/                     # データ用
+│   └── customers.ts          # 顧客データ用
+├── hooks/                    # カスタムHooks用
+│   └── useSearch.ts          # 検索のHooks用
+├── lib/                      # ユーティリティ関数用
+│   ├── sortCustomers.ts      # 並び替えのユーティリティ関数用
+│   └── utils.ts              # ユーティリティ関数用
+├── pages/                    # ページコンポーネント
+│   ├── Dashboard.tsx     # ダッシュボード用のコンポーネント
+│   └── Signin.tsx            # ヘッダー用コンポーネント
+├── types/                    # 型定義用
+│   └── customer.ts           # 顧客データの型定義用
+├── App.tsx                   # アプリケーションのルート
+├── index.css                 # グローバルなスタイル
+├── Layout.tsx                # 共通レイアウト
+├── main.tsx                  # エントリーポイント
+└── vite-env.d.ts             # Viteの環境設定用の型定義
 ```
 
 ## 今後の改善点
