@@ -8,7 +8,7 @@ const customers = [
     furigana: "やまだはちろう",
     email: "taro.yamada@example.com",
     phone: "090-1234-5678",
-    registeredAt: "1999年2月1日",
+    registeredAt: "1999-02-01",
   },
   {
     name: "鈴木花子",
@@ -36,11 +36,11 @@ const customers = [
     furigana: "やまだたろう",
     email: "ichiro.tanaka@example.com",
     phone: "070-3456-7890",
-    registeredAt: "2022-8-25",
+    registeredAt: "2022-08-25",
   },
 ];
 
-const DashboardMain = () => {
+const Dashboard = () => {
   // 検索キーワード
   const [searchQuery, setSearchQuery] = useState<string>("");
   // 並び替え基準（デフォルト: 顧客名順）
@@ -115,4 +115,4 @@ const DashboardMain = () => {
   );
 };
 
-export default DashboardMain;
+export default Dashboard;

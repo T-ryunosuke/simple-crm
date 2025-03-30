@@ -1,13 +1,13 @@
 import Sidebar from "@/components/Sidebar";
 import Header from "@/components/Header";
-import DashboardMain from "@/pages/DashboardMain";
+import Dashboard from "@/pages/Dashboard";
 
 const Layout = () => {
   return (
     <div>
       <Header />
       <Sidebar />
-      <DashboardMain />
+      <Dashboard />
     </div>
   );
 };
