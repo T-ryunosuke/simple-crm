@@ -9,7 +9,7 @@ const Sidebar = () => {
           <Link to="/">顧客一覧</Link>
         </li>
         <li className="px-5 py-3 font-mono text-lg tracking-widest hover:bg-gray-700">
-          <Link to="/signin">顧客登録</Link>
+          <Link to="/">顧客登録</Link>
         </li>
         <li className="px-5 py-3 font-mono text-lg hover:bg-gray-700">
           <Link to="/signin">ログアウト</Link>
